@@ -1,4 +1,4 @@
-module github.com/kennedy-vieira/golang-telegram-bot
+module github.com/kennedy-vieira/telegram-gatinhosbot
 
 go 1.16
 
