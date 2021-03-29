@@ -2,7 +2,6 @@ package main
 
 import (
 	//bot
-
 	"fmt"
 	"log"
 	"os"
@@ -53,6 +52,7 @@ func sendScheduledReddit(bt *tb.Bot) {
 		return
 	}
 	defer db.Close()
+
 	//pinga a db e verifica se a conexão foi feita
 	err = db.Ping()
 	if err != nil {
@@ -80,8 +80,6 @@ func sendScheduledReddit(bt *tb.Bot) {
 }
 
 func main() {
-
-	fmt.Println(get_catApi_pic_Url())
 	//bot
 	var (
 		port           = os.Getenv("PORT")
@@ -107,7 +105,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	// msg com schedule
+	//schedules
 	if len(os.Args) >= 2 && os.Args[1] == "gatinhos" {
 		sendScheduledPics(bot)
 		os.Exit(0)
@@ -118,6 +116,7 @@ func main() {
 		os.Exit(0)
 		return
 	}
+	//end schedules
 	bot.Handle("/criadb", func(m *tb.Message) {
 		if m.Sender.Username == admin_username {
 			err := startdb()
