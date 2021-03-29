@@ -1,7 +1,3 @@
-# golang-telegram-bot
-Telegram bot made in golang
+#gatinhosbot
 
-#todo :
-db contendo lista de usuarios
-usuario pode optar por receber fotos de gatinhos
-
+Bot para telegram feito em go que envia imagens de gatinhos para os usuarios
