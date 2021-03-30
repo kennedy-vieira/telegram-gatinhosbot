@@ -65,7 +65,7 @@ func insertUserDB(u *tb.User, chatid int64) error {
 	INSERT INTO users(user_id,t_username,first_name,chat_id,aww_update_opt,random_image_opt)
 	VALUES($1,$2,$3,$4,$5,$6)`
 
-	_, err = db.Exec(sqlStatement, u.ID, u.Username, u.FirstName, chatid, false, false)
+	_, err = db.Exec(sqlStatement, u.ID, u.Username, u.FirstName, chatid, true, true)
 	if err != nil {
 
 		fmt.Println("erro ao executar comando na db.func insertUserDb")

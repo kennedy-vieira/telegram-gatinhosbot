@@ -162,6 +162,14 @@ func main() {
 		bot.Send(m.Sender, b)
 		bot.Send(m.Sender, c)
 	})
+	bot.Handle("/ajuda", func(m *tb.Message) {
+		bot.Send(m.Sender, `Esse bot pode enviar imagens de gatinhos automaticamente ou sob demanda.
+		Utilize /config para ativar ou desativar o recebimento automatico`)
+	})
+	bot.Handle("/help", func(m *tb.Message) {
+		bot.Send(m.Sender, `Esse bot pode enviar imagens de gatinhos automaticamente ou sob demanda.
+		Utilize /config para ativar ou desativar o recebimento automatico`)
+	})
 
 	//opções de configurações
 
@@ -203,8 +211,7 @@ func main() {
 	})
 	bot.Handle("/config", func(m *tb.Message) {
 		bot.Send(m.Sender,
-			`Aqui você pode ativar/desativar o recebimento automatico de conteudo,
-			 escolha a opção que deseja mudar as configurações`,
+			`Aqui você pode ativar/desativar o recebimento automatico de conteudo, escolha a opção que deseja mudar as configurações`,
 			&tb.ReplyMarkup{InlineKeyboard: inlineBtns})
 	})
 
